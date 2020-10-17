@@ -1,0 +1,178 @@
+/* сотовый телефон */
+
+@media (max-width: 767px) {
+    .top-logos img {
+        max-width: none;
+    }
+
+    .corner{
+        display: none;
+    }
+
+    header{
+        padding: 0;
+    }
+
+    .top-logos {
+        transform: scale(0.5);
+    }
+    .header--fixed .top-logos {
+        transform: scale(0.5);
+    }
+
+    .players-section {
+        display: block;
+        height: auto;
+        padding-top: 100px;
+        margin: 0 0 50px 0;
+    }
+    .player-block{
+        margin-bottom: 60px;
+    }
+    .players-list .player{
+        width: 50%;
+        margin-top: -1px;
+    }
+    .players-list .name .text {
+         white-space: normal;
+        line-height: 14px;
+        padding: 5px 0;
+    }
+    .footer-content{
+        flex-wrap: wrap;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .footer-content .col:nth-child(1){
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content .col:nth-child(1) img{
+        width: 160px;
+    }
+    .footer-content .col:nth-child(2){
+        width: 100%;
+        order: 4;
+        text-align: center;
+    }
+    .footer-content .col:nth-child(3){
+        width: 40%;
+    }
+
+    .footer-content .col:nth-child(4){
+        width: 60%;
+        padding: 10px 0;
+    }
+    .politics-link {
+        background: url(../img/18.png) 100% 0 no-repeat;
+        padding: 0 40px 0 0;
+        background-size: 24px 24px;
+        text-align: right;
+    }
+    .playerModal .modal-dialog {
+        padding-top: 150px;
+    }
+    .playerModal .player-block .name {
+        width: 193px;
+    }
+    .playerModal .player-block {
+        top: -120px;
+    }
+    .playerModal .controls .button {
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .button span{
+        width: 100%;
+    }
+    .form-container{
+        max-width: 100%;
+    }
+
+    .screen{
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 374px) {
+    .playerModal .player-block {
+        top: -60px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 1000px;
+    }
+}
+
+
+
+
+/* планшет */
+@media (min-width: 767px) and (max-width: 1024px) {
+    .players-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .footer-logo img{
+        width: 150px;
+    }
+
+    .footer-content {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .politics-link {
+        background: url(../img/18.png) 100% 0 no-repeat;
+        padding: 0 40px 0 0;
+        background-size: 24px 24px;
+        text-align: right;
+    }
+    .modal-dialog {
+        width: auto;
+    }
+
+ 
+
+
+}
+
+
+@media (max-height: 800px) and (min-width: 1024px) and (max-width: 1440px)  {
+    header{
+        /* position: static;
+        background: #000000; */
+        padding: 0;
+    }
+    .top-logos {
+        transition: all 400ms;
+        transform: scale(0.6);
+    }
+    .player-block{
+        transition: all 400ms;
+        transform: scale(0.8);
+    }
+    .players-wrapper{
+        padding-top: 40px;
+    }
+    .players-section {
+        height: 100%;
+        margin: 120px 0 140px 0;
+    }
+    .head-title {
+        margin-top: 0;
+    }
+}
+
+
+
+

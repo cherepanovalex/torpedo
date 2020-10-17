@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="">
+    <meta name="yandex-verification" content="c58bf8500c7d3566"/>
+    <link rel="shortcut icon" href="img/favicon/favicon-16x16.png" type="image/png">
+    <meta name="msapplication-square70x70logo" content="img/favicon/ms-icon-70x70.png">
+    <meta name="msapplication-square150x150logo" content="img/favicon/ms-icon-150x150.png">
+    <meta name="msapplication-square310x310logo" content="img/favicon/ms-icon-310x310.png">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+
+    <title>Букмекерская контора</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<img src="img/left-corner.png" class="corner left-corner">
+<img src="img/right-corner.png" class="corner right-corner">
+
+
+<div class="modal fade playerModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+
+                <div class="player-block">
+                    <div class="number">#1</div>
+                    <div class="photo">
+                        <img src="img/player.png">
+                        <div class="name">
+                            <div class="text"> Елисеев Александр</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popUp-content">
+                    <!--первый блок-->
+                    <div class="screen screen1" id="screen1" style="display: none;">
+                        <div class="title">
+                            <h2>Вы уже зарегистрированы <br> в БК “Olimp.bet”?</h2>
+                        </div>
+                        <div class="controls">
+                            <button class="button type2" id="buttonYes"><span>Да</span></button>
+                            <button class="button" id="buttonNo"><span>Нет</span></button>
+                        </div>
+                    </div>
+                    <!--первый блок конец-->
+
+                    <!--второй блок, показываем если клиент нажал ДА в предыдущем-->
+                    <div class="screen screen2" id="screen2" style="display: none;">
+                        <div class="title">
+                            <h2>Авторизация</h2>
+                        </div>
+                        <form class="form" id="formLogin">
+                            <div class="form-container">
+                                <div class="form-group group-name">
+                                    <p class="label-name">Логин</p>
+                                    <input type="text" name="name" class="input-field empty-field required-field"
+                                           required/>
+                                    <div class="error">Неверный логин</div>
+                                </div>
+                                <div class="form-group group-password">
+                                    <p class="label-name">Пароль</p>
+                                    <input type="password" name="password"
+                                           class="input-field empty-field required-field" required/>
+                                    <div class="error">Вы ввели неверный пароль</div>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button type="submit" class="button type2" disabled><span>Продолжить</span></button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--второй блок конец-->
+
+                    <!--третий блок, показываем если клиент залогинился-->
+                    <div class="screen screen3" id="screen3" style="display: none;">
+                        <div class="title">
+                            <h2>Спасибо! <br> ваш голос учтен!</h2>
+                        </div>
+                    </div>
+                    <!--третий блок конец-->
+
+                    <!--четвертный блок, регистрация, показываем если на первом блоке клиент нажал НЕТ-->
+                    <div class="screen screen4" id="screen4" style="display: none;">
+                        <div class="title">
+                            <h2>Регистрация</h2>
+                        </div>
+                        <!--ошибка-->
+                        <div class="system-error">
+                            <span>Запрос с базой данных закончился ошибкой.</span>
+                        </div>
+
+                        <!--
+                        Запрос с базой данных закончился ошибкой
+                        Пользователь не из системы CUPIS
+                        Ошибка записи в базу данных
+                        Не удалось записать в базу данных! Повторите запрос позже
+                        Отправка SMS не удалась! Попробуйте еще раз. Если SMS по-прежнему не приходит - свяжитесь со службой поддержки.
+                        Код из sms не пришел
+                        Ошибка базы данных
+                        Логин с таким номером уже существует в базе данных!
+                        -->
+
+
+                        <!--ошибка конец-->
+                        <form class="form" id="formReg" novalidate>
+                            <div class="form-container">
+                                <div class="form-group group-phone">
+                                    <p class="label-name">Номер телефона*</p>
+                                    <input type="tel" name="tel" class="input-field empty-field tel-mask required-field"
+                                           autocomplete="off" data-role="input"
+                                           data-required="" name="phone" placeholder="+7 (999) 999-99-99"
+                                           data-inputmask="&#39;alias&#39;:&#39;phone&#39;, &#39;mask&#39;:&#39;+7 (999) 999-99-99&#39;, &#39;placeholder&#39;: &#39;_&#39;"
+                                           inputmode="numeric" required>
+                                    <div class="error">Вы ввели некорректный номер телефона</div>
+                                </div>
+                                <div class="form-group group-email">
+                                    <p class="label-name">Email*</p>
+                                    <input type="email" name="email" class="input-field empty-field required-field"
+                                           placeholder="email@gmail.com" required>
+                                    <div class="error">Вы ввели некорректный e-mail</div>
+                                </div>
+                                <div class="form-group group-promocode">
+                                    <p class="label-name">Промокод(при наличии)</p>
+                                    <input type="text" name="text" class="input-field empty-field">
+                                    <div class="error">Вы ввели неверный промокод</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group check-rule" data-role="group">
+                                <div class="checkbox-rules-block">
+                                    <div class="checkbox-block">
+                                        <input type="checkbox" id="rules_box" value="1" class="rules-box">
+                                        <label for="rules_box">
+                               <span>Подтверждаю, что мне исполнилось 18 лет, даю свое <a
+                                       href="https://www.olimp.bet/help/media/files/2017/05/31/forma-soglasiya-na-obrabotku-personalnyih-dannyih-uchastnika-azartnyih-igr_gbxAbhn.pdf">согласие</a> на обработку персональных данных ООО "БК
+ ОЛИМП" и КИВИ Банк (АО), ознакомлен и согласен с <a href="https://static.qiwi.com/ru/doc/oferta_lk.pdf"> офертой</a> центра учета переводов интерактивных ставок КИВИ Банк (АО). </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="controls">
+                                <!--  при успешной регистрации редиректить на https://www.olimp.bet/identification  -->
+                                <button type="submit" class="button type2" disabled><span>Зарегистрироваться</span>
+                                </button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <!--четвертый блок конец-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="wrap">  <!--wrap начало-->
+
+
+    <header>
+        <div class="container">
+            <ul class="top-logos">
+                <li><a href="https://www.torpedo.ru"><img src="img/logo-torpedo.svg"></a></li>
+                <li><a href="https://www.olimp.bet"><img src="img/logo-top.svg"></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="content">
+
+
+        <div class="players-section">
+            <div class="head-title">
+                <h1>Голосуй</h1>
+                <h2>За лучшего игрока</h2>
+            </div>
+            <div class="players-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="player-block">
+                                <div class="number">#1</div>
+                                <div class="photo">
+                                    <img src="img/player.png">
+                                    <div class="name">
+                                        <div class="text"> Елисеев Александр</div>
+                                    </div>
+                                </div>
+                                <div class="percent">45%</div>
+                                <button class="button" data-target="#myModal" data-toggle="modal">
+                                    <span>голосовать</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="player-block">
+                                <div class="number">#2</div>
+                                <div class="photo">
+                                    <img src="img/player.png">
+                                    <div class="name">
+                                        <div class="text"> Елисеев Александр</div>
+                                    </div>
+                                </div>
+                                <div class="percent">45%</div>
+                                <button class="button" data-target="#myModal" data-toggle="modal">
+                                    <span>голосовать</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="player-block">
+                                <div class="number">#3</div>
+                                <div class="photo">
+                                    <img src="img/player.png">
+                                    <div class="name">
+                                        <div class="text"> Елисеев Александр</div>
+                                    </div>
+                                </div>
+                                <div class="percent">45%</div>
+                                <button class="button" data-target="#myModal" data-toggle="modal">
+                                    <span>голосовать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="players-score-table">
+                <div class="head-title">
+                    <h1>архив победителей 20/21
+                    </h1>
+                </div>
+
+                <div class="players-list">
+                    <div class="player">
+                        <div class="photo"
+                             style="background: url(img/player.png) center 0 no-repeat; background-size: cover;">
+                            <div class="number">09</div>
+                        </div>
+                        <div class="name">
+                            <div class="text">
+                                Елисеев Александр
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="player">
+                        <div class="photo"
+                             style="background: url(img/player.png) center 0 no-repeat; background-size: cover;">
+                            <div class="number">10</div>
+                        </div>
+                        <div class="name">
+                            <div class="text">
+                                Елисеев Александр
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player">
+                        <div class="photo"
+                             style="background: url(img/player.png) center 0 no-repeat; background-size: cover;">
+                            <div class="number">12</div>
+                        </div>
+                        <div class="name">
+                            <div class="text">
+                                Елисеев Александр
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player">
+                        <div class="photo"
+                             style="background: url(img/player.png) center 0 no-repeat; background-size: cover;">
+                            <div class="number">13</div>
+                        </div>
+                        <div class="name">
+                            <div class="text">
+                                Елисеев Александр
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player">
+                        <div class="photo"
+                             style="background: url(img/player.png) center 0 no-repeat; background-size: cover;">
+                            <div class="number">11</div>
+                        </div>
+                        <div class="name">
+                            <div class="text">
+                                Елисеев Александр
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="col footer-logo">
+                    <a href="https://www.olimp.bet"><img src="img/logo-olimpbet.svg"></a>
+                </div>
+                <div class="col co">
+                    © Общество с ограниченной ответственностью <br class="visible-xs"> БК «Олимп», 2020
+                </div>
+                <div class="col contacts">
+                    <div><a href="mailto:help@olimp.bet">help@olimp.bet</a></div>
+                    <div><a href="tel:88002348744"> 8 (800) 234-87-44</a></div>
+                </div>
+                <div class="col politics">
+                    <a href="https://www.olimp.bet/help/about/?_ga=2.211748373.1002120331.1526551046-1870819769.1526551046#documents"
+                       class="politics-link">
+                        Политика обработки персональных данных
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!--wrap конец-->
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.inputmask.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

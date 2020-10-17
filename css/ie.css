@@ -1,0 +1,41 @@
+.info-block.tel{
+    background: url("../img/tel-ico.png") 0 0 no-repeat;
+    margin: 0 20px 0 0;
+}
+
+.info-block.support{
+    background: url("../img/mail-ico.png") 0 0 no-repeat;
+}
+
+
+.social .soc-1 a{
+    background: url("../img/soc-ico1.png") 0 0 no-repeat;
+}
+.social .soc-2 a{
+    background: url("../img/soc-ico2.png") 0 0 no-repeat;
+}
+.social .soc-3 a{
+    background: url("../img/soc-ico3.png") 0 0 no-repeat;
+}
+
+footer .info-block.tel{
+    background: url("../img/tel-ico.png") right 0 no-repeat;
+    margin: 5px 0 5px 0;
+}
+
+footer .info-block.support{
+    background: url("../img/mail-ico.png") right 0 no-repeat;
+}
+
+.conditions .condition-block.b1 .circle{
+    background: url("../img/icon_money.png") 0 0 no-repeat;
+}
+.conditions .condition-block.b2 .circle{
+    background: url("../img/icon_smile.png") 0 0 no-repeat;
+}
+.conditions .condition-block.b3 .circle{
+    background: url("../img/icon_coins.png") 0 0 no-repeat;
+}
+.conditions .condition-block.b4 .circle{
+    background: url("../img/icon_time.png") 0 0 no-repeat;
+}
