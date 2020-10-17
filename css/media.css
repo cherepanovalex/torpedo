@@ -79,6 +79,7 @@
     }
     .playerModal .player-block {
         top: -120px;
+        width: 149px;
     }
     .playerModal .controls .button {
         margin: 0 0 20px 0;
