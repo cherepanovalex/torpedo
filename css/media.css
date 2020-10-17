@@ -115,6 +115,12 @@
 
 /* планшет */
 @media (min-width: 767px) and (max-width: 1024px) {
+    .players-section {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
     .footer-logo img{
         width: 150px;
