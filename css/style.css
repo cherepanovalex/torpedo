@@ -413,10 +413,17 @@ h2{
     position: absolute;
     width: 54px;
     height: 44px;
-    line-height: 52px;
-    font-size: 27px;
     left: 0;
     top:0;
+    padding: 5px 0 0 0;
+}
+
+.players-list .player  .number .month-num{
+    font-size: 22px;
+}
+
+.players-list .player  .number .month-name{
+    font-size: 11px;
 }
 
 .players-list .player .photo .number{
