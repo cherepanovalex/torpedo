@@ -74,7 +74,14 @@ body:after{
 #wrap {
     position: relative;
     overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     min-height: 100%;
 }
@@ -112,8 +119,15 @@ header.header--fixed{
 }
 
 .top-logos{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+
     justify-content: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
     transition: all 400ms;
     transform: scale(1);
 }
@@ -229,9 +243,21 @@ h2{
 
 .players-section{
     /* height: 100vh; */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+
     justify-content: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+
     flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     margin: 120px 0 140px 0;
 }
 
@@ -450,6 +476,9 @@ h2{
 }
 
 .footer-content{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     align-items: center;
     line-height: 20px;
