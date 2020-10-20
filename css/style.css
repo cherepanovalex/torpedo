@@ -603,13 +603,13 @@ h2{
 }
 
 .form-group .error{
-    position: absolute;
+    position: relative;
     font-size: 12px;
     line-height: 12px;
     color: #CD493E;
     left: 0;
     text-align: left;
-    top:40px;
+    top:0;
     display: none;
 }
 
