@@ -362,13 +362,13 @@ h2{
 }
 
 .button:hover{
-    border-color: #2C661F;
+    border-color: #ffffff;
 }
 
 .button:hover span{
-    background-color: #2C661F;
-    color: #ffffff;
-    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
 }
 
 .button.type2 {
@@ -382,13 +382,13 @@ h2{
 }
 
 .button.type2:hover{
-    border-color: #FCC341;
+    border-color: #ffffff;
 }
 
 .button.type2:hover span{
-    background-color: #FCC341;
-    border-color: #000000;
-    color: #000000;
+    background-color: #ffffff;
+    border-color: #2C661F;
+    color: #2C661F;
 }
 
 
@@ -411,6 +411,8 @@ h2{
 
 .players-list{
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .players-list .player{
@@ -525,6 +527,10 @@ h2{
     width: 28px;
     height: 28px;
     background: url("../img/close.svg") 0 0 no-repeat;
+}
+
+.playerModal .close:hover{
+    background: url("../img/close-active.svg") 0 0 no-repeat;
 }
 
 .playerModal .modal-dialog {
