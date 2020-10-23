@@ -245,7 +245,7 @@ $().ready(function () {
 
 var playersList;
 
-$.get('/js/playerslist.json', function (response) {
+$.get('js/playerslist.json', function (response) {
     playersList = response.filter(function (item) {
         return item["date"] === currentDate;
     })[0];
