@@ -34,7 +34,7 @@ function editPlayerData() {
     var output_name = modal.find('.gNamePop');
     var output_photo = modal.find('.player-img');
 
-    $('.btnPlayer').on('click', function() {
+    $('.btnPlayer').on('click', function () {
         var item = $(this).parents('.player-block');
         var name = item.find('.gName').text();
         var number = item.find('.gNumber').text();
@@ -48,7 +48,7 @@ function editPlayerData() {
 
 
 //если залогинен то = true
-var LOGINNED;
+var LOGINNED =true;
 
 
 //обработка формы Авторизации
@@ -242,3 +242,43 @@ $().ready(function () {
         });
 
 });
+
+var playersList;
+
+$.get('/js/playerslist.json', function (response) {
+    playersList = response.filter(function (item) {
+        return item["date"] === currentDate;
+    })[0];
+    var data = [
+        {
+            score: 33,
+            index: 1
+        }, {
+            score: 53,
+            index: 2
+        }, {
+            score: 61,
+            index: 3
+        }];
+
+
+
+    $.each(data, function (i, item) {
+        var index = item.index;
+        var player = playersList.players.filter(function (obj) {
+            // console.log(obj)
+            return obj.index === index;
+        })[0];
+
+        $('#index-' + index)
+            .find('.gName').text(player.name).end()
+            .find('.percent').text(item.score + '%').end()
+            .find('.playerPhoto').attr('src', player.photo)
+        console.log(index, player)
+
+
+    });
+
+
+});
+

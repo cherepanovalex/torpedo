@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2020-10-01",
+    "players": [
+      {
+        "index": 1,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Василий Петров"
+      },
+      {
+        "index": 2,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Петр Никулин"
+      },
+      {
+        "index": 3,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Иван Сидоров"
+      }
+    ]
+  },
+  {
+    "date": "2020-11-01",
+    "players":  [
+      {
+        "index": 4,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Рональдо Иванов"
+      },
+      {
+        "index": 5,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Григорий Сидоров"
+      },
+      {
+        "index": 6,
+        "photo": "img/players/2020-10-01/1/player.png",
+        "name": "Иван Дзюба"
+      }
+    ]
+  }
+]
