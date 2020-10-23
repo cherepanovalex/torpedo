@@ -48,7 +48,7 @@ function editPlayerData() {
 
 
 //если залогинен то = true
-var LOGINNED =true;
+var LOGINNED;
 
 
 //обработка формы Авторизации
