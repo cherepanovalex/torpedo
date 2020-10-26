@@ -413,6 +413,7 @@ h2{
     width: 100%;
     position: relative;
     z-index: 2;
+    min-height: 426px;
 }
 
 .players-list .player{

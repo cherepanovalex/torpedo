@@ -29,6 +29,9 @@
     .player-block{
         margin-bottom: 60px;
     }
+    .players-list{
+        min-height: auto;
+    }
     .players-list .player{
         width: 50%;
         margin-top: -1px;
